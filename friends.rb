@@ -1,6 +1,5 @@
-puts "Type the name of your friend and push enter to submit."
-puts "Continue to add each friend one at a time."
-puts "Type enter by itself to excape."
+puts 'Type the name of each friend followed by an enter'
+puts 'To escape the program, only hit enter'
 
 names = []
 
@@ -10,12 +9,16 @@ while true
 
   response = gets.chomp
 
-  if response != ''
-    names.push(response)
-  else
+  if response == ''
     break
+  else
+    names.push(response)
   end
 
 end
 
-puts "These are the names you entered" + names.to_s
+puts "The names of your friends in alphabetical order are " + names.sort.to_s
+
+puts "The names of your friends in reverse order are " + names.reverse.to_s
+
+puts "The names of your friends in reverse alphabetical order are " + names.sort.reverse.to_s

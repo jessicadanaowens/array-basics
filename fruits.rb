@@ -1,20 +1,22 @@
 fruits = ['apples', 'oranges', 'bananas', 'pomegranates', 'grapes']
 
-puts "fruits length: " + fruits.length.to_s
+puts fruits.length
 
-puts "index of bananas: " + fruits.index('bananas').to_s
+puts fruits.index('bananas')
 
-new_fruits = fruits
+new_fruits = fruits.dup.insert(1, 'rasberries')
 
-new_fruits.insert(1,'rasberries')
+puts new_fruits
 
-puts "new array with inserted rasberries: " + new_fruits.to_s
+puts new_fruits.each {|fruit| puts fruit.length}
 
-new_fruits.each {|fruit| puts "The length of #{fruit} is: " +  fruit.length.to_s}
+puts new_fruits.each {|fruit| puts fruit.upcase}
 
-new_fruits.each {|fruit| puts fruit.upcase}
+puts "These are the fruits that include 'g':" + (new_fruits.each {|fruit| if fruit.include? 'g'
+                                puts fruit
+                              end}).to_s
 
-new_fruits.each {|fruit| if fruit.include? "g"
-                           puts fruit
-                         end}
+print out a nested array where each sub array is two elements
+the friend's name, length of their name
 
+puts nested_array = [['Jess', 'Jess'.length], ['Blake', 'Blake'.length]]
